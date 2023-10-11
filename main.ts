@@ -1,19 +1,61 @@
-import { render } from './actions/render';
-import { genero, limitador, media } from './filters/genero';
-import { peliculas } from './types/pelicula';
+let numeros: Array<number>;
+let promesaDeNumero = Promise<string>;
 
-let misPeliculas: peliculas = [
-    { titulo: 'Scary movie', genero: 'comedia'},
-    { titulo: 'La jungla de cristal', genero: 'accion'},
-    { titulo: 'Los mercenarios', genero: 'accion'},
-    { titulo: 'Salvar al soldado Ryan', genero: 'belica'}
-];
+const dameItemAleatorio = <T>(items: Array<T>): T => {
+    let posicion = Math.floor(Math.random() * items.length);
+    return items[posicion];
+}
+
+const dameNumero = (numeros:number[]):number => {
+    let posicion = Math.floor(Math.random() * numeros.length);
+    return numeros[posicion];
+}
+
+const dameCadena = (cadenas:string[]):string => {
+    let posicion = Math.floor(Math.random() * cadenas.length);
+    return cadenas[posicion];
+}
 
 
-misPeliculas
-    .filter((pelicula) => genero(pelicula))
-    .map(render);
+
+let itemNum = dameItemAleatorio([1, 3, 5, 2]);
+
+
+let itemFamiliaGot = dameItemAleatorio(['Stark', 'Lannister', 'Baratheon', 'Targaryen', 'Martell', 'Greyjoy']);
 
 
 
-console.log('la media es', media(1 ,2));
+
+interface Inventario<T> {
+    addItem: (item: T) => void;
+    getItemsInventario: () => Array<T>;
+}
+interface Portatil {
+    marca: string;
+}
+
+interface SmartPhone {
+    marca: string;
+    so: string
+}
+class Catalogo<T> implements Inventario<T> {
+    private catalogo = new Array<T>();
+    addItem(item: T) {
+        this.catalogo.push(item);
+    }
+    getItemsInventario(): Array<T> {
+        return this.catalogo;
+    }
+}
+    
+
+let catalogoPortatil = new Catalogo<Portatil>();
+
+catalogoPortatil.addItem({marca: 'HP'});
+catalogoPortatil.addItem({marca: 'Lenovo'});
+let items = catalogoPortatil.getItemsInventario();
+
+
+let catalogoSmartPhone = new Catalogo<SmartPhone>();
+catalogoSmartPhone.addItem({marca: 'apple', so: 'ios'})
+catalogoSmartPhone.addItem({marca: 'xiaomi', so: 'android'})
