@@ -1,6 +1,5 @@
 import { render } from './actions/render';
-import { accion } from './filters/accion';
-import { belica } from './filters/belica';
+import { genero, limitador } from './filters/genero';
 import { peliculas } from './types/pelicula';
 
 let misPeliculas: peliculas = [
@@ -11,10 +10,8 @@ let misPeliculas: peliculas = [
 ];
 
 
-misPeliculas.filter(accion).map(render);
+misPeliculas
+    .filter((pelicula) => genero(pelicula))
+    .map(render);
 
-
-// definir el tipo cliente con nombre y edad ( string , numero )
-// definir una funcion filtro para mayores de edad que reciba un cliente
-// definir una funcion que dado una coleccion de clientes "notifica"
-
+limitador(1);
