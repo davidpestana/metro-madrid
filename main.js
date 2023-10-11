@@ -11,4 +11,4 @@ var misPeliculas = [
 misPeliculas
     .filter(function (pelicula) { return (0, genero_1.genero)(pelicula); })
     .map(render_1.render);
-(0, genero_1.limitador)(1);
+console.log('la media es', (0, genero_1.media)(1, 2));

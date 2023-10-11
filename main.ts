@@ -1,5 +1,5 @@
 import { render } from './actions/render';
-import { genero, limitador } from './filters/genero';
+import { genero, limitador, media } from './filters/genero';
 import { peliculas } from './types/pelicula';
 
 let misPeliculas: peliculas = [
@@ -14,4 +14,6 @@ misPeliculas
     .filter((pelicula) => genero(pelicula))
     .map(render);
 
-limitador(1);
+
+
+console.log('la media es', media(1 ,2));
