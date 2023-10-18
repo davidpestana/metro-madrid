@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "primerProyecto": {
+    "data-binding": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/primer-proyecto",
+            "outputPath": "dist/data-binding",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -56,13 +56,7 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.development.ts"
-                }
-              ]
+              "namedChunks": true
             }
           },
           "defaultConfiguration": "production"
@@ -71,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "primerProyecto:build:production"
+              "browserTarget": "data-binding:build:production"
             },
             "development": {
-              "browserTarget": "primerProyecto:build:development"
+              "browserTarget": "data-binding:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "primerProyecto:build"
+            "browserTarget": "data-binding:build"
           }
         },
         "test": {
@@ -106,8 +100,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": false
   }
 }
