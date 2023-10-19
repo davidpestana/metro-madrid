@@ -1,0 +1,54 @@
+<!-- <input type="text" [(ngModel)]="persona.nombre" />
+<input type="text" [(ngModel)]="persona.nombre" disabled />
+<p>{{persona.nombre}}</p>
+<input type="text" [(ngModel)]="persona.edad" />
+<p>{{persona.edad}}</p>
+
+
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Favorite food</mat-label>
+    <input matInput placeholder="Ex. Pizza" value="Sushi">
+  </mat-form-field>
+
+  <mat-form-field #yoTambienSoyAlgo class="example-full-width">
+    <mat-label>Leave a comment</mat-label>
+    <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+  </mat-form-field>
+</form> -->
+
+<app-ejemplo
+  #r1
+  [name]=title
+  [size]=4
+  (tick)="onTick($event)"
+  (click)="onClick()"
+></app-ejemplo>
+
+
+<app-ejemplo
+  #r1
+  [name]=title
+  [size]=4
+  (tick)="onTick($event)"
+  (click)="onClick()"
+></app-ejemplo>
+
+
+<app-ejemplo
+  #r1
+  [name]=title
+  [size]=4
+  (tick)="onTick($event)"
+  (click)="onClick()"
+></app-ejemplo>
+
+
+<input type="text" [(ngModel)]="title"/>
+
+
+<!-- <button (click)="llamada(r1)">pulsa</button>
+
+<input #i1 type="text" (input)="evento_bis(i1.value,i2.value,i3.value)" />
+<input #i2 type="text" (input)="evento_bis(i1.value,i2.value,i3.value)" />
+<input #i3 type="text" (input)="evento_bis(i1.value,i2.value,i3.value)" /> -->
