@@ -1,0 +1,13 @@
+<p>interpolacion {{ titulo }} works! {{ titulo }}</p>
+
+<!-- <button *ngFor="let boton of array" type="button" (click)="cuandoCambia($event)">decir {{boton}}</button>
+
+
+<input (change)="cuandoCambia($event)"/> -->
+
+
+<ngb-rating [(rate)]="valor" (hover)="cuandoCambia('hover', $event)" (rateChange)="cuandoCambia('ratechange', $event)" (leave)="cuandoCambia('leave',$event)"></ngb-rating>
+
+
+
+valor en el componente interpolacion: {{valor}}
