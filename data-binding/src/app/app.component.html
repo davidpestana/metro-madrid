@@ -1,1 +1,17 @@
-<app-interpolacion [title]="title"></app-interpolacion>
+<div *ngFor="let item of items; let primero = first; let otra = first; let ultimo = last; let par = even; let impar = odd; let n = index">
+    <div [ngClass]="{par: par, impar, primero, ultimo}">{{item}}</div>
+</div>
+
+<button (click)="addItem(item.value)">add</button>
+<input #item />
+
+
+<div [ngSwitch]="resultado">
+  <p *ngSwitchCase="10">10</p>
+  <p *ngSwitchCase="100">100</p>
+  <p *ngSwitchDefault>Valor por defecto</p>
+</div>
+
+
+
+
