@@ -1,0 +1,7 @@
+<button (click)="next()"> NEXT</button>
+<div *ngFor="let character of characters$ | async">
+  <app-character [character] = "character"></app-character>
+</div>
+
+
+<app-binding [(ngModel)]="factura" ivalid></app-binding>

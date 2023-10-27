@@ -1,28 +1,31 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Customer, Crypto } from 'src/types';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-  mostrar = true;
-  items = ['a','b','c']
-  resultado = 10;
+export class AppComponent {
 
-  constructor(private http:HttpClient) {
+  formato = "MMM dd, yyyy 'at' hh:mm a";
 
+  precio = 100.336;
+
+  fecha = new Date();
+  otrafecha = "2021-22-11";
+  numero = 3334343433333333;
+
+
+  serie = {
+    titulo: 'Manhunt: Unabomber',
+    temporadas: 2,
+    finalizada: true
   }
 
-  ngOnInit(): void {
-    this.http.get('https://rickandmortyapi.com/api/character')
-      .subscribe(({results}:any)  => this.items = results.map(({name}:any) => name ))
-  }
 
-  addItem(valor:string) {
-    // this.items.push(valor);
-    this.items = [...this.items, valor];
+  mayusculas(texto:string) {
+    return texto.toUpperCase();
   }
-
 }
