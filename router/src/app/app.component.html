@@ -1,0 +1,12 @@
+<p>ANTES</p>
+<a href="/">home</a> |
+<a href="/hola">hola</a> |
+<a href="/adios">adios</a>
+<hr />
+<a routerLink="/">home</a> |
+<a [routerLink]="['hola']">hola</a> |
+<a routerLink="/adios">adios</a>
+<hr />
+<button *ngFor="let factura of facturas" [routerLink]="['factura', factura]">Factura {{factura}}</button>
+<router-outlet></router-outlet>
+<p>DESPUES</p>
